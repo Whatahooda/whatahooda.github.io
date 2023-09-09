@@ -4,6 +4,18 @@
 </head>
 
 <body>
+    <script>
+        function moveLink() {
+            const element_first = document.getElementById("first");
+            let element_second = document.getElementById("second");
+            element_second.setAttribute("href", element_first.getAttribute("href"));
+            element_second.setAttribute("target", element_first.getAttribute("target"));
+            element_second.setAttribute("rel", element_first.getAttribute("rel"));
+            element_second.innerHTML = element_first.innerHTML;
+
+            element_first.remove();
+        }
+    </script>
     <h1>YOOOO, Welcome to my Portfolio!</h1>
 
     <p>
@@ -17,18 +29,14 @@
 
     <br>
 
-    <a id="first" href="https://whatahooda.itch.io">Here's my Itch account! Go look at my games!</a>
+    <!-- target="_blank" has the link open a new tab, rel="noreferrer noopener" prevents a possible exploit-->
+    <a id="first" href="https://whatahooda.itch.io" target="_blank" rel="noreferrer noopener">Here's my Itch account! Go look at my games!</a>
 
-    <script>
-        function moveLink() {
-            const element_first = document.getElementById("first");
-            const element_second = document.getElementById("second");
-            element_second.setAttribute("href", element_first.getAttribute("href"));
-            element_second.innerHTML = element_first.innerHTML;
+    <br>
 
-            element_first.remove();
-        }
-    </script>
-    <button type="button" onclick="moveLine()">Click me to move the itch link!</button>
+    <button type="button" onclick="moveLink()">Click me to move the itch link!</button>
+
+    <br>
+
     <a id="second">This is where it should move.</a>
 </body>
