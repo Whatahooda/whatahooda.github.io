@@ -6,7 +6,28 @@
 <body>
     <h1>YOOOO, Welcome to my Portfolio!</h1>
 
-    <p>This is currently WIP, so hi whoever you are. Interesting that you're here.</p>
+    <p>
+        This is currently WIP, so hi whoever you are. Interesting that you're here.
+        Anyways, as stated, this is WIP. Most of the stuff you see is temp content or test content. Probably, have a good time anyways!
+        Newline test?
+    </p>
+
+    <!-- alt = Text that shows while image does not show/load -->
+    <img src="/images/dragonfruit_bg.png" alt="Dragonfruit with sunglasses flexing" width="200" height="200">
+    <a id="first" href="https://whatahooda.itch.io">Here's my Itch account! Go look at my games!</a>
+
     <br>
-    <p>Anyways, as stated, this is WIP. Most of the stuff you see is temp content or test content. Probably, have a good time anyways! \n Newline test?</p>
+
+    <script>
+        function moveLink() {
+            const element_first = document.getElementById("first");
+            const element_second = document.getElementById("second");
+            element_second.setAttribute("href", element_first.getAttribute("href"));
+            element_second.innerHTML = element_first.innerHTML;
+
+            element_first.remove();
+        }
+    </script>
+    <button type="button" onclick="moveLine()">Click me to move the itch link!</button>
+    <a id="second"></a>
 </body>
